@@ -1,10 +1,5 @@
 import React, { Component } from "react";
-// import items from "./data";
 import Client from "./Contentful";
-
-// Client.getEntries({ content_type: "hotelReservationSite" }).then((response) =>
-//   console.log(response.items)
-// );
 
 const RoomContext = React.createContext();
 
