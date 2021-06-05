@@ -6,8 +6,10 @@ import Hero from "../components/Hero";
 export default function Error() {
   return (
     <Hero>
-      <Banner title='404' subTitle='Page not found'>
-        <Link to='/' className='btn-primary'>Return Home</Link>
+      <Banner title="404" subTitle="Page not found">
+        <Link to="/" className="btn-primary">
+          Return Home
+        </Link>
       </Banner>
     </Hero>
   );

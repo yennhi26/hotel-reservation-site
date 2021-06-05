@@ -10,12 +10,12 @@ export default class FeaturedRooms extends Component {
   render() {
     const { featuredRooms: rooms, loading } = this.context;
     const { name, greeting } = this.context;
-    const roomList = rooms.map(room => <Room room={room} />)
+    const roomList = rooms.map((room) => <Room room={room} key={room.id} />);
     return (
       <section className="featured-rooms">
         <Title title="featured rooms" />
-        <div className='featured-rooms-center'>
-            {loading ? <Loading /> : roomList}
+        <div className="featured-rooms-center">
+          {loading ? <Loading /> : roomList}
         </div>
       </section>
     );

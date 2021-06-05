@@ -4,6 +4,7 @@ import Banner from "../components/Banner";
 import FeaturedRooms from "../components/FeaturedRooms";
 import Hero from "../components/Hero";
 import Services from "../components/Services";
+import StyledHero from "../components/StyledHero";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       </Hero>
       <Services />
       <FeaturedRooms />
+      <StyledHero>Hello World</StyledHero>
     </>
   );
 }

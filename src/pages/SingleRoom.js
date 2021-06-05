@@ -4,11 +4,12 @@ import Banner from "../components/Banner";
 import { Link } from "react-router-dom";
 import { RoomContext } from "../context";
 import defaultBg from "../images/room-1.jpeg";
+import StyledHero from "../components/StyledHero";
+import i from "styled-components/dist/styled-components-macro.esm";
 
 export default class SingleRoom extends Component {
   constructor(props) {
     super(props);
-    console.log(this.props);
     this.state = {
       slug: this.props.match.params.slug,
       defaultBg,
@@ -18,7 +19,6 @@ export default class SingleRoom extends Component {
   render() {
     const { getRoom } = this.context;
     const room = getRoom(this.state.slug);
-    console.log(room);
     if (!room) {
       return (
         <div className="error">
@@ -40,29 +40,49 @@ export default class SingleRoom extends Component {
       pets,
       images,
     } = room;
+    const [mainImg, ...defaultImg] = images;
     return (
-      <Hero className="roomsHero">
-        <Banner title={`${name} room`}>
-          <Link to="/rooms" className="btn-primary">
-            Back to Rooms
-          </Link>
-        </Banner>
-      </Hero>
+      <>
+        <StyledHero img={images[0] || this.state.defaultBcg}>
+          <Banner title={`${name} room`}>
+            <Link to="/rooms" className="btn-primary">
+              back to rooms
+            </Link>
+          </Banner>
+        </StyledHero>
+        <section className="single-room">
+          <div className="single-room-images">
+            {defaultImg.map((item, index) => (
+              <img key={index} src={item} alt={name} />
+            ))}
+          </div>
+          <div className="single-room-info">
+            <article className="desc">
+              <h3>details</h3>
+              <p>{description}</p>
+            </article>
+            <article className="info">
+              <h3>info</h3>
+              <h6>price : ${price}</h6>
+              <h6>size : {size} SQFT</h6>
+              <h6>
+                max capacity :
+                {capacity > 1 ? `${capacity} people` : `${capacity} person`}
+              </h6>
+              <h6>{pets ? "pets allowed" : "no pets allowed"}</h6>
+              <h6>{breakfast && "free breakfast included"}</h6>
+            </article>
+          </div>
+        </section>
+        <section className="room-extras">
+          <h6>extras </h6>
+          <ul className="extras">
+            {extras.map((item, index) => (
+              <li key={index}>- {item}</li>
+            ))}
+          </ul>
+        </section>
+      </>
     );
   }
 }
-// import React from 'react'
-// import Hero from "../components/Hero";
-// import Banner from "../components/Banner";
-// import { Link } from "react-router-dom";
-// import { RoomContext } from "../context";
-// import defaultBg from '../images/room-1.jpeg';
-
-// export default function SingleRoom({props}) {
-//   console.log(this.props);
-//   return (
-//     <div>
-//       Hello from Single room
-//     </div>
-//   )
-// }
