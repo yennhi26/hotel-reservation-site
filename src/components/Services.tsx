@@ -1,8 +1,8 @@
 import React from "react";
-import Title from "./Title";
+import { Title } from "./Title";
 import { FaCocktail, FaHiking, FaShuttleVan, FaBeer } from "react-icons/fa";
 
-export default function Services() {
+export const Services = () => {
   const [services, setServices] = React.useState([
     {
       icon: <FaCocktail />,

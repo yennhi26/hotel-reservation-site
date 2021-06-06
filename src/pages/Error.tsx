@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Banner from "../components/Banner";
-import Hero from "../components/Hero";
+import { Banner } from "../components/Banner";
+import { Hero } from "../components/Hero";
 
-export default function Error() {
+export const Error = () => {
   return (
     <Hero>
       <Banner title="404" subTitle="Page not found">

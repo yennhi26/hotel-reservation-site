@@ -1,9 +1,8 @@
 import React from "react";
 import Room from "../components/Room";
-import Loading from "./Loading";
 
-export default function RoomsList({ rooms }) {
-  console.log(rooms);
+export default function RoomsList({ rooms }: any) {
+
   if (!rooms.length)
     return (
       <div className="empty-search">
@@ -13,7 +12,7 @@ export default function RoomsList({ rooms }) {
   return (
     <section className="roomslist">
       <div className="roomslist-center">
-        {rooms.map((item) => {
+        {rooms.map((item: any) => {
           return <Room key={item.id} room={item} />;
         })}
       </div>

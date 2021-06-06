@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Banner from "../components/Banner";
-import FeaturedRooms from "../components/FeaturedRooms";
-import Hero from "../components/Hero";
-import Services from "../components/Services";
-import StyledHero from "../components/StyledHero";
+import { Banner } from "../components/Banner";
+import { FeaturedRooms } from "../components/FeaturedRooms";
+import { Hero } from "../components/Hero";
+import { Services } from "../components/Services";
+import { StyledHero } from "../components/StyledHero";
 
-export default function Home() {
+export const Home = () => {
   return (
     <>
       <Hero>

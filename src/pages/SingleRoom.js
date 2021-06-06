@@ -1,11 +1,9 @@
 import React, { Component } from "react";
-import Hero from "../components/Hero";
-import Banner from "../components/Banner";
+import { Banner } from "../components/Banner";
 import { Link } from "react-router-dom";
 import { RoomContext } from "../context";
 import defaultBg from "../images/room-1.jpeg";
-import StyledHero from "../components/StyledHero";
-import i from "styled-components/dist/styled-components-macro.esm";
+import { StyledHero } from "../components/StyledHero";
 
 export default class SingleRoom extends Component {
   constructor(props) {
@@ -40,7 +38,7 @@ export default class SingleRoom extends Component {
       pets,
       images,
     } = room;
-    const [mainImg, ...defaultImg] = images;
+    const [...defaultImg] = images;
     return (
       <>
         <StyledHero img={images[0] || this.state.defaultBcg}>
