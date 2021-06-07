@@ -1,8 +1,9 @@
 # Hotel reservation site
 Project using :
-- ReactJS
-- React-router-dom
-- Contentful
+- ReactJS :
+  A JavaScript library for building user interfaces
+- React-router-dom : Declarative routing for React.js
+- Contentful : API-first content platform to build digital experiences
 
 ## Available Scripts
 
