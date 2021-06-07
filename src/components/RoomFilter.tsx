@@ -3,7 +3,7 @@ import { RoomContext } from "../context";
 import { useContext } from "react";
 import { Title } from "./Title";
 
-export default function RoomsFilter({ rooms }) {
+export const RoomsFilter = ({ rooms }:any) => {
   const context = useContext(RoomContext);
   const {
     handleChange,
@@ -19,11 +19,11 @@ export default function RoomsFilter({ rooms }) {
   } = context;
 
   // get unique types
-  const typesList = rooms?.map((item) => item.type);
-  let types = ["all", ...new Set(typesList)];
+  const typesList = rooms?.map((item:any) => item.type);
+  let types = Array.from(new Set(['all',typesList]))
 
-  const capacityList = rooms?.map((item) => item.capacity);
-  let people = [...new Set(capacityList)];
+  const capacityList = rooms?.map((item:any) => item.capacity);
+  let people = Array.from(new Set([capacityList]))
 
   return (
     <section className="filter-container">

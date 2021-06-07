@@ -7,7 +7,7 @@ import { Navbar } from "./components/Navbar";
 import { Route, Switch } from "react-router-dom";
 import { BrowserRouter } from "react-router-dom";
 
-function App() {
+export const App = () => {
   return (
     <BrowserRouter>
       <Navbar />
@@ -20,5 +20,3 @@ function App() {
     </BrowserRouter>
   );
 }
-
-export default App;

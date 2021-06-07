@@ -21,7 +21,6 @@ export const Home = () => {
       </Hero>
       <Services />
       <FeaturedRooms />
-      <StyledHero>Hello World</StyledHero>
     </>
   );
 }

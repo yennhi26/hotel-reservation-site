@@ -3,7 +3,7 @@ import { Title } from "./Title";
 import { FaCocktail, FaHiking, FaShuttleVan, FaBeer } from "react-icons/fa";
 
 export const Services = () => {
-  const [services, setServices] = React.useState([
+  const services = [
     {
       icon: <FaCocktail />,
       title: "free cocktails",
@@ -24,7 +24,7 @@ export const Services = () => {
       title: "strongest beer",
       info: "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
     },
-  ]);
+  ];
 
   return (
     <div className="services">
