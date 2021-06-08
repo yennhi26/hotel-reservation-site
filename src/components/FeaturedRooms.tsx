@@ -7,14 +7,11 @@ import Room from "./Room";
 export const FeaturedRooms = () => {
 
   const context = useContext(RoomContext);
-  console.log('context', context)
   const {
     rooms, loading
   } = context;
-  console.log('rooms', rooms)
   const featuredRooms = rooms.filter((room: any) => room.featured === true)
   const roomList = featuredRooms?.map((room: any) => <Room room={room} key={room.id} />);
-  console.log(roomList)
   return (
     <section className="featured-rooms">
       <Title title="featured rooms" />

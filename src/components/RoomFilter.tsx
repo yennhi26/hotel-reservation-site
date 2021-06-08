@@ -20,10 +20,10 @@ export const RoomsFilter = ({ rooms }:any) => {
 
   // get unique types
   const typesList = rooms?.map((item:any) => item.type);
-  let types = Array.from(new Set(['all',typesList]))
+  let uniqueTypes:any = ['all',...new Set(typesList)]
 
   const capacityList = rooms?.map((item:any) => item.capacity);
-  let people = Array.from(new Set([capacityList]))
+  let uniqueCapacities:any = [...new Set(capacityList)]
 
   return (
     <section className="filter-container">
@@ -39,7 +39,7 @@ export const RoomsFilter = ({ rooms }:any) => {
             className="form-control"
             onChange={handleChange}
           >
-            {types.map((item, index) => {
+            {uniqueTypes.map((item:any, index:number) => {
               return (
                 <option value={item} key={index}>
                   {item}
@@ -59,7 +59,7 @@ export const RoomsFilter = ({ rooms }:any) => {
             className="form-control"
             onChange={handleChange}
           >
-            {people.map((item, index) => {
+            {uniqueCapacities.map((item: any, index: any) => {
               return (
                 <option value={item} key={index}>
                   {item}
